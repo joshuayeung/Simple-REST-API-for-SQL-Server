@@ -37,7 +37,7 @@ var server = app.listen(8081, function () {
 
 });
 
-app.get('/sql?=:sql/', function (req, res) {
+app.get('/sql/:sql/', function (req, res) {
     sql.connect(sqlConfig, function() {
         var request = new sql.Request();
         var stringRequest = req.params.sql;
